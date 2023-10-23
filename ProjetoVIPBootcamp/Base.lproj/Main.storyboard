@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qrd-2p-Lkk">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Pesquisar-->
+        <scene sceneID="UNW-kr-Gah">
+            <objects>
+                <viewController id="Gqf-Qs-rwe" customClass="PesquisaFilmeViewController" customModule="ProjetoVIPBootcamp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yv1-O9-GCZ">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="hhR-4V-lbe"/>
+                        <color key="backgroundColor" systemColor="systemBrownColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Pesquisar" image="magnifyingglass" catalog="system" id="sjF-5B-Q7K"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q99-WA-JBh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1260" y="483"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="lQx-zq-KjV">
+            <objects>
+                <viewController id="0Bv-25-9WJ" customClass="FilmeViewController" customModule="ProjetoVIPBootcamp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="He5-aL-sM6">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filmes " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AMZ-IH-aLY">
+                                <rect key="frame" x="20" y="87" width="350" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="t3S-Ju-JD2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="44"/>
+                                <color key="textColor" systemColor="systemYellowColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OKl-Xf-dOE">
+                                <rect key="frame" x="0.0" y="147" width="390" height="614"/>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gEG-4l-zUk">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="169-ew-l03"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="OKl-Xf-dOE" firstAttribute="leading" secondItem="169-ew-l03" secondAttribute="leading" id="2rg-DS-rBm"/>
+                            <constraint firstItem="OKl-Xf-dOE" firstAttribute="top" secondItem="AMZ-IH-aLY" secondAttribute="bottom" id="Can-fC-SOg"/>
+                            <constraint firstItem="169-ew-l03" firstAttribute="bottom" secondItem="OKl-Xf-dOE" secondAttribute="bottom" id="K0m-gI-Yjs"/>
+                            <constraint firstItem="169-ew-l03" firstAttribute="trailing" secondItem="AMZ-IH-aLY" secondAttribute="trailing" constant="20" id="Y8P-i1-buC"/>
+                            <constraint firstItem="AMZ-IH-aLY" firstAttribute="top" secondItem="169-ew-l03" secondAttribute="top" constant="40" id="ZvK-k5-Osk"/>
+                            <constraint firstItem="169-ew-l03" firstAttribute="trailing" secondItem="OKl-Xf-dOE" secondAttribute="trailing" id="fi3-6B-TnM"/>
+                            <constraint firstItem="AMZ-IH-aLY" firstAttribute="leading" secondItem="169-ew-l03" secondAttribute="leading" constant="20" id="i42-2x-PcD"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="6pE-1b-SlK"/>
+                    <navigationItem key="navigationItem" id="LEc-mb-4Ry"/>
+                    <connections>
+                        <outlet property="collectionView" destination="OKl-Xf-dOE" id="alg-1D-sek"/>
+                        <segue destination="CMo-I3-UJi" kind="show" identifier="detalhesFilme" id="sdh-Zb-WuM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2C2-3W-fly" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1246.1538461538462" y="-199.05213270142178"/>
+        </scene>
+        <!--Detalhes Filme View Controller-->
+        <scene sceneID="zOR-F0-Uvq">
+            <objects>
+                <viewController id="CMo-I3-UJi" customClass="DetalhesFilmeViewController" customModule="ProjetoVIPBootcamp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HGc-lh-SDD">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="dmm-bb-dvQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="WEl-t5-C9u"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="atN-Qz-cgv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2229.2307692307691" y="-201.18483412322274"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="aYn-b0-qeq">
+            <objects>
+                <tabBarController id="qrd-2p-Lkk" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oNw-X5-h3w">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" systemColor="systemYellowColor"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="0Bv-25-9WJ" kind="relationship" relationship="viewControllers" id="hCe-hR-1di"/>
+                        <segue destination="Gqf-Qs-rwe" kind="relationship" relationship="viewControllers" id="WdG-eW-njN"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sAp-Mp-NTK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-590" y="105"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="house.fill" catalog="system" width="128" height="104"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
